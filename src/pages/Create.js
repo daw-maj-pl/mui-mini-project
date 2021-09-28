@@ -1,6 +1,7 @@
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 export default function Create() {
   return (
@@ -19,6 +20,7 @@ export default function Create() {
         type="submit"
         color="secondary"
         variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}
       >
         Submit
       </Button>
