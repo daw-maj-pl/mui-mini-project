@@ -1,13 +1,31 @@
+import { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import { makeStyles } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles({});
+const useStyles = makeStyles({
+  field: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: 'block'
+  }
+});
 
 export default function Create() {
   const classes = useStyles();
+  const [title, setTitle] = useState('');
+  const [details, setDetails] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (title && details) {
+      console.log(title, details);
+    }
+  };
 
   return (
     <Container>
@@ -20,15 +38,39 @@ export default function Create() {
         Create a New Note
       </Typography>
 
-      <Button
-        onClick={() => console.log('you clicked me')}
-        type="submit"
-        color="secondary"
-        variant="contained"
-        endIcon={<KeyboardArrowRightIcon />}
-      >
-        Submit
-      </Button>
+      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+        <TextField
+          onChange={e => setTitle(e.target.value)}
+          // value={title}
+          className={classes.field}
+          label="Note Title"
+          variant="outlined"
+          color="secondary"
+          fullWidth
+          required
+        />
+        <TextField
+          onChange={e => setDetails(e.target.value)}
+          // value={details}
+          className={classes.field}
+          label="Details"
+          variant="outlined"
+          color="secondary"
+          multiline
+          minRows={4}
+          fullWidth
+          required
+        />
+
+        <Button
+          type="submit"
+          color="secondary"
+          variant="contained"
+          endIcon={<KeyboardArrowRightIcon />}
+        >
+          Submit
+        </Button>
+      </form>
     </Container>
   );
 }
