@@ -18,10 +18,22 @@ export default function Create() {
   const classes = useStyles();
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
+  const [titleError, setTitleError] = useState(false);
+  const [detailsError, setDetailsError] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
+    setTitleError(false);
+    setDetailsError(false);
 
+    // if (!title) {
+    if (title === '') {
+      setTitleError(true);
+    }
+    // if (!details) {
+    if (details === '') {
+      setDetailsError(true);
+    }
     if (title && details) {
       console.log(title, details);
     }
@@ -48,6 +60,7 @@ export default function Create() {
           color="secondary"
           fullWidth
           required
+          error={titleError}
         />
         <TextField
           onChange={e => setDetails(e.target.value)}
@@ -60,6 +73,7 @@ export default function Create() {
           minRows={4}
           fullWidth
           required
+          error={detailsError}
         />
 
         <Button
