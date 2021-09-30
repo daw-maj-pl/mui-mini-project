@@ -1,0 +1,22 @@
+{
+  "notes": [
+    {
+      "title": "John's birthday party",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos placeat natus excepturi reprehenderit dolor at a dolorem iste dolorum adipisci laborum veritatis tempora atque, quasi laboriosam, facere harum itaque hic autem debitis. Rem aperiam suscipit fugiat magni quibusdam et optio, ab odio alias eligendi fugit eum at consectetur? Alias, dolorum.",
+      "category": "reminders",
+      "id": 1
+    },
+    {
+      "title": "Send emails to customers",
+      "details": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore laborum repudiandae consequuntur eveniet officiis, dolorem laudantium iure et, expedita deleniti est iusto debitis! Omnis, illum quam! Fugiat, architecto laborum ullam neque animi suscipit aliquid quaerat distinctio voluptatum praesentium officia ratione cumque veritatis, culpa tempora dolorum dicta blanditiis? Quos quam provident velit delectus a quae, id sunt corporis quaerat nobis. Dolore!",
+      "category": "work",
+      "id": 2
+    },
+    {
+      "title": "Do the shopping",
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ullam nesciunt dolores dolorum tempora fugiat veritatis inventore ab distinctio iusto corporis, enim mollitia, debitis, molestiae eos laboriosam rem! Magni qui at eligendi inventore maiores praesentium voluptate. Eaque similique ipsa consequatur. Similique fuga autem quae enim nemo obcaecati voluptatum eligendi tenetur incidunt eius fugiat ex veritatis sunt quibusdam corporis ipsum, nostrum aliquam. Explicabo placeat doloribus necessitatibus suscipit asperiores iste ea quam expedita commodi fugit nihil quas esse, quisquam, laudantium impedit corrupti.",
+      "category": "todos",
+      "id": 3
+    }
+  ]
+}
