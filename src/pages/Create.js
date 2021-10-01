@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
@@ -20,6 +21,7 @@ const useStyles = makeStyles({
 
 export default function Create() {
   const classes = useStyles();
+  const history = useHistory();
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
@@ -44,7 +46,7 @@ export default function Create() {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({ title, details, category })
-      });
+      }).then(() => history.push('/'));
     }
   };
 
