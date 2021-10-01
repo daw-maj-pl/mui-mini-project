@@ -5,13 +5,13 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
 import Typography from '@material-ui/core/Typography';
 
-export default function NoteCard({ note }) {
+export default function NoteCard({ note, handleDelete }) {
   return (
     <div>
       <Card elevation={1}>
         <CardHeader
           action={
-            <IconButton>
+            <IconButton onClick={() => handleDelete(note.id)}>
               <DeleteOutlined />
             </IconButton>
           }
