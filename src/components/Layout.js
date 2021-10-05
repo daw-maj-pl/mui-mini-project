@@ -10,10 +10,11 @@ import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   page: {
     background: '#f9f9f9',
-    width: '100%'
+    width: '100%',
+    padding: theme.spacing(3)
   },
   drawer: {
     width: drawerWidth
@@ -26,8 +27,11 @@ const useStyles = makeStyles({
   },
   active: {
     background: '#f4f4f4'
+  },
+  title: {
+    padding: theme.spacing(2)
   }
-});
+}));
 
 export default function Layout({ children }) {
   const classes = useStyles();
@@ -59,7 +63,9 @@ export default function Layout({ children }) {
         classes={{ paper: classes.drawerPaper }}
       >
         <div>
-          <Typography variant="h5">Quick Notes</Typography>
+          <Typography variant="h5" className={classes.title}>
+            Quick Notes
+          </Typography>
         </div>
 
         {/* links/list section */}
