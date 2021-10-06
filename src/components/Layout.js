@@ -7,6 +7,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 
 const drawerWidth = 240;
 
@@ -30,7 +32,11 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     padding: theme.spacing(2)
-  }
+  },
+  appBar: {
+    width: `calc(100% - ${drawerWidth}px)`
+  },
+  toolbar: theme.mixins.toolbar
 }));
 
 export default function Layout({ children }) {
@@ -54,6 +60,11 @@ export default function Layout({ children }) {
   return (
     <div className={classes.root}>
       {/* app bar */}
+      <AppBar className={classes.appBar} elevation={0}>
+        <Toolbar>
+          <Typography>Welcome to quick notes.</Typography>
+        </Toolbar>
+      </AppBar>
 
       {/* side drawer */}
       <Drawer
@@ -86,7 +97,10 @@ export default function Layout({ children }) {
         </List>
       </Drawer>
 
-      <div className={classes.page}>{children}</div>
+      <div className={classes.page}>
+        <div className={classes.toolbar}></div>
+        {children}
+      </div>
     </div>
   );
 }
