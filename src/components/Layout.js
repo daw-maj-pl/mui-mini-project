@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import { format } from 'date-fns';
 
 const drawerWidth = 240;
 
@@ -36,7 +37,10 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`
   },
-  toolbar: theme.mixins.toolbar
+  toolbar: theme.mixins.toolbar,
+  date: {
+    flexGrow: 1
+  }
 }));
 
 export default function Layout({ children }) {
@@ -62,7 +66,10 @@ export default function Layout({ children }) {
       {/* app bar */}
       <AppBar className={classes.appBar} elevation={0}>
         <Toolbar>
-          <Typography>Welcome to quick notes.</Typography>
+          <Typography className={classes.date}>
+            Today is the {format(new Date(), 'do MMM Y')}
+          </Typography>
+          <Typography>John</Typography>
         </Toolbar>
       </AppBar>
 
