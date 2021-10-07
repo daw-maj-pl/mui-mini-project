@@ -10,6 +10,7 @@ import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
+import Avatar from '@material-ui/core/Avatar';
 
 const drawerWidth = 240;
 
@@ -40,6 +41,9 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
   date: {
     flexGrow: 1
+  },
+  avatar: {
+    marginLeft: theme.spacing(2)
   }
 }));
 
@@ -70,6 +74,7 @@ export default function Layout({ children }) {
             Today is the {format(new Date(), 'do MMM Y')}
           </Typography>
           <Typography>John</Typography>
+          <Avatar src="john.png" className={classes.avatar} />
         </Toolbar>
       </AppBar>
 
